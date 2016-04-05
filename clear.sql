@@ -1,0 +1,11 @@
+drop table Movie,
+           Actor,
+           Sales,
+           Director,
+           MovieGenre,
+           MovieDirector,
+           MovieActor,
+           MovieRating,
+           Review,
+           MaxPersonID,
+           MaxMovieID
