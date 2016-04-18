@@ -43,7 +43,7 @@
 
     
     <?php
-    	$db_connection = mysql_connect("localhost:3036", "cs143", "");
+    	$db_connection = mysql_connect("localhost", "cs143", "");
 
     	if(!$db_connection) {
     		$errmsg = mysql_error($db_connection);

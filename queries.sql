@@ -6,11 +6,6 @@ WHERE title='Die Another Day';
 
 /*count of all actors who acted in multiple movies*/
 SELECT COUNT(DISTINCT ma1.aid) FROM MovieActor ma1 
-INNER JOIN MovieActor ma2 ON ma1.aid=ma2.aid 
-WHERE ma1.mid<>ma2.mid;
-
-/*count of all actors who acted in multiple movies (TRY 2)*/
-SELECT COUNT(DISTINCT ma1.aid) FROM MovieActor ma1 
 WHERE EXISTS 
 (SELECT * FROM MovieActor ma2 
 	WHERE ma1.mid <> ma2.mid AND ma1.aid = ma2.aid);

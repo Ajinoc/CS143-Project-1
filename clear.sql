@@ -1,3 +1,5 @@
+SET FOREIGN_KEY_CHECKS=0;
+
 drop table Movie,
            Actor,
            Sales,
@@ -8,4 +10,6 @@ drop table Movie,
            MovieRating,
            Review,
            MaxPersonID,
-           MaxMovieID
+           MaxMovieID;
+
+SET FOREIGN_KEY_CHECKS=1;
