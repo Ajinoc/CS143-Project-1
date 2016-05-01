@@ -1,0 +1,19 @@
+body {
+	font-family: "trebuchet ms", "lucidia grande", verdana, arial, sans-serif;
+	background-color: #CCE2E2;
+	min-width: 320px;
+	font-size: large;
+	color: #515252;
+}
+
+#menu {
+	font-size:80%;
+	font-family: "trebuchet ms", "lucidia grande", verdana, arial, sans-serif;
+	color: #333;
+	background-color: #FFEECB;
+	width: 20%;
+	height: 100%;
+	float: left;
+	text-align: left;
+	letter-spacing:.1em;
+}
