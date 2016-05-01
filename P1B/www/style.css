@@ -1,9 +1,13 @@
 body {
 	font-family: "trebuchet ms", "lucidia grande", verdana, arial, sans-serif;
-	background-color: #CCE2E2;
+	background-color: transparent;
 	min-width: 320px;
 	font-size: large;
 	color: #515252;
+}
+
+#index {
+	background-color: #CCE2E2;	
 }
 
 #menu {
@@ -17,3 +21,15 @@ body {
 	text-align: left;
 	letter-spacing:.1em;
 }
+
+ #iframe {
+ 	overflow: hidden; 
+ 	height: 100%; 
+ 	width: 100%; 
+ 	position: absolute;
+ 	background-color: #9BC2C2;
+ }
+
+ table {
+ 	background-color: #9890AF;
+ }
