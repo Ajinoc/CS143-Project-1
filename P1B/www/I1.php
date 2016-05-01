@@ -77,7 +77,7 @@
             	}
 
             	if($ins_q){
-                	$upd_q = mysql_query($query_update, $db_connection)
+                	$upd_q = mysql_query($query_update, $db_connection);
                     if(!$upd_q){
                         $errmsg = mysql_error($db_connection);
                         print "Update failed: $errmsg <br />";
