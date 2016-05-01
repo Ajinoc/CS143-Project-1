@@ -70,12 +70,18 @@
         		$query_update = "UPDATE MaxPersonID SET id = $pid[0]";
 
         		/* Perform MySQL INSERT/UPDATE */
-        		$ins_q = mysql_query($query_insert, $db_connection) or
-            	print(mysql_error());
+        		$ins_q = mysql_query($query_insert, $db_connection);
+                if(!$ins_q){
+                    $errmsg = mysql_error($db_connection);
+                    print "Insert failed: $errmsg <br />";
+            	}
 
-            	if($ins_q <> false){
-                	$upd_q = mysql_query($query_update, $db_connection) or
-                	print(mysql_error());
+            	if($ins_q){
+                	$upd_q = mysql_query($query_update, $db_connection)
+                    if(!$upd_q){
+                        $errmsg = mysql_error($db_connection);
+                        print "Update failed: $errmsg <br />";
+                    }
            		}
             	if($ins_q && $upd_q){
                 	print "Successfully added. <br />";

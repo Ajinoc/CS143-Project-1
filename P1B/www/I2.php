@@ -91,14 +91,17 @@
         		$query_update = "UPDATE MaxMovieID SET id = $pid[0]";
 
         		/* Perform MySQL INSERT/UPDATE */
-        		$ins_q = mysql_query($query_insert, $db_connection) or
-            	print(mysql_error());
-           
-           		if (!$ins_q )
-           			print "OW";
+        		$ins_q = mysql_query($query_insert, $db_connection) 
+                if(!$ins_q){
+                    $errmsg = mysql_error($db_connection);
+                    print "Insert failed: $errmsg <br />";
+                }
             	if($ins_q <> false){
-                	$upd_q = mysql_query($query_update, $db_connection) or
-                	print(mysql_error());
+                	$upd_q = mysql_query($query_update, $db_connection)
+                    if(!$upd_q){
+                        $errmsg = mysql_error($db_connection);
+                        print "Update failed: $errmsg <br />";
+                    }
            		}
 
             	/* Generate query for MovieGenre INSERT */
@@ -107,8 +110,11 @@
     			{
     				print $genre[$i];
         			$query_insert= "INSERT INTO MovieGenre(mid, genre) VALUES ('$pid[0]','".$genre[$i]."')";
-        			mysql_query($query_insert, $db_connection) or
-            		print(mysql_error());
+        			mysql_query($query_insert, $db_connection) 
+                    if(!$ins_q){
+                    $errmsg = mysql_error($db_connection);
+                    print "Insert failed (but will continue adding other genres): $errmsg <br />";
+                }
     			}
 
     			if($ins_q && $upd_q){
