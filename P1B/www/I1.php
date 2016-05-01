@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<head>
-		<title>add actor / director</title>
+		<title>Add Actor/Director</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>	
 	<body>
@@ -55,7 +55,6 @@
     	    	$query = "SELECT MAX(id)+1 FROM MaxPersonID";
 	            $rs = mysql_query($query, $db_connection);
         	    $pid = mysql_fetch_array($rs);
-                print "$pid[0] <br />";
 
                 /* Account for empty dod field */
                 $dod = !empty($dod) ? "'$dod'" : "NULL";
@@ -73,9 +72,7 @@
         		/* Perform MySQL INSERT/UPDATE */
         		$ins_q = mysql_query($query_insert, $db_connection) or
             	print(mysql_error());
-           
-           		if (!$ins_q )
-           			print "OW";
+
             	if($ins_q <> false){
                 	$upd_q = mysql_query($query_update, $db_connection) or
                 	print(mysql_error());
