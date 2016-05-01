@@ -10,7 +10,7 @@
 
     <div id="menu">
 
-        <p><b> Add: </b></p>
+        <p><b> Add New Information: </b></p>
         <ul>
             <li><a href="I1.php" target="iframe">Actor/Director Information</a></li>
             <li><a href="I2.php" target="iframe">Movie Information</a></li>
@@ -19,12 +19,12 @@
             <li><a href="I5.php" target="iframe">Director to Movie Relation</a></li>
         </ul>
 
-        <p><b> Search: </b></p>
+        <p><b> Search through Database: </b></p>
         <ul>
             <li><a href="S1.php" target="iframe">Search for Actor(ess)/Movie</a></li>
         </ul>
 
-        <p><b> Browse: </b></p>
+        <p><b> Browse Content: </b></p>
         <ul>
             <li><a href="B1.php?param1=52794" target="iframe">Actor Information</a></li>
             <li><a href="B2.php?param1=2632" target="iframe">Movie Information</a></li>
