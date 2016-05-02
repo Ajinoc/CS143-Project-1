@@ -14,7 +14,8 @@
 			First Name:	<input type="text" name="first" maxlength="20"><br/>
 			Last Name:	<input type="text" name="last" maxlength="20"><br/>
 			Sex:		<input type="radio" name="sex" value="Male" checked="true">Male
-						<input type="radio" name="sex" value="Female">Female<br/>
+						<input type="radio" name="sex" value="Female">Female
+                        (if Director, sex doesn't matter)<br/>
 						
 			Date of Birth (yyyy-mm-dd):	<input type="text" name="dob"><br/>
 			Date of Death (yyyy-mm-dd):	<input type="text" name="dod"> (If still alive, leave blank.)<br/><hr/>
