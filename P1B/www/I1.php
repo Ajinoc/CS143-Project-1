@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>	
 	<body>
-		<h3>Add new actor/director: </h3>
+		<h3>Add new actor/director: </h3><hr/>
 
 		<form action="<?php $_PHP_SELF ?>" method="GET">
 			

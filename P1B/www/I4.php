@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>	
 	<body>
-		<h3>Add an actor (+ role) to a movie: </h3>
+		<h3>Add an actor (+ role) to a movie: </h3><hr/>
 
 		<?php
 
@@ -41,7 +41,7 @@
    						echo '<option value="'.$row[0].' '.$row[1].'">'.$row[0].' ('.$row[1].')</option>';
 					}
 				?>
-					</select><br/><hr/>
+					</select><br/>
 			Role: <input type="text" name="role" maxlength="50"><br/><hr/>
 
 			<input type="submit" name="submit" value="Add to the database!"/>

@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>	
 	<body>
-		<h3>Add a director to a movie: </h3>
+		<h3>Add a director to a movie: </h3><hr/>
 
 		<?php
 
