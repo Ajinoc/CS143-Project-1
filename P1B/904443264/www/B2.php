@@ -25,7 +25,7 @@
 
         $query = "SELECT * FROM Movie WHERE Movie.id='$id'";
         $rs = mysql_query($query, $db_connection);
-        $row = mysql_fetch_array($rs);
+        $row = mysql_fetch_row($rs);
 
         print "<b>Title</b>: $row[1]<br/>
         <b>Year</b>: $row[2]<br/>
@@ -40,14 +40,14 @@
         if ($row = mysql_fetch_row($rs)) {
             $sub_query = "SELECT * FROM Director WHERE Director.id=$row[1]";
             $sub_rs = mysql_query($sub_query, $db_connection);
-            $sub_row = mysql_fetch_array($sub_rs);
+            $sub_row = mysql_fetch_row($sub_rs);
             $directors = $sub_row[2].' '.$sub_row[1].'('.$sub_row[3].')';
         }
 
         while ($row = mysql_fetch_row($rs)) {
             $sub_query = "SELECT * FROM Director WHERE Director.id=$row[1]";
             $sub_rs = mysql_query($sub_query, $db_connection);
-            $sub_row = mysql_fetch_array($sub_rs);
+            $sub_row = mysql_fetch_row($sub_rs);
             $directors = $directors.', '.$sub_row[2].' '.$sub_row[1].'('.$sub_row[3].')';
         }
 
@@ -70,7 +70,7 @@
 
         $query = "SELECT * FROM Sales WHERE Sales.mid='$id'";
         $rs = mysql_query($query, $db_connection);
-        $row = mysql_fetch_array($rs);
+        $row = mysql_fetch_row($rs);
 
         if ($row[1] != "") {
             $row[1] = "\$$row[1]";
@@ -81,7 +81,7 @@
 
         $query = "SELECT * FROM MovieRating WHERE MovieRating.mid='$id'";
         $rs = mysql_query($query, $db_connection);
-        $row = mysql_fetch_array($rs);
+        $row = mysql_fetch_row($rs);
 
         print "<b>IMDb Rating</b>: $row[1]<br/>
                <b>Rotten Tomatoes Rating</b>: $row[2]<br/><hr/>";
@@ -92,7 +92,7 @@
         while($row = mysql_fetch_row($rs)) {
             $sub_query = "SELECT * FROM Actor WHERE Actor.id='$row[1]'";
             $sub_rs = mysql_query($sub_query, $db_connection);
-            $sub_row = mysql_fetch_array($sub_rs);
+            $sub_row = mysql_fetch_row($sub_rs);
             print 'Starring <a href="B1.php?id='.$sub_row[0].'" target="iframe">'.$sub_row[2]. ' '.$sub_row[1].'</a> as "'.$row[2].'".<br/>';
         }
 
@@ -100,7 +100,7 @@
         /* Grab average score */
         $query = "SELECT AVG(rating), COUNT(*) FROM Review GROUP BY mid HAVING mid=$id";
         $rs = mysql_query($query, $db_connection);
-        $row = mysql_fetch_array($rs);
+        $row = mysql_fetch_row($rs);
 
         print 'Average Score: ';
         if($row[1] > 0)
