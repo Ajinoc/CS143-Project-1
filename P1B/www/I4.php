@@ -53,13 +53,9 @@
         	list($m_title,$m_year) = explode("|",$_GET['movie']);
         	list($a_first,$a_last,$a_dob) = explode("|",$_GET['actor']);
         	$role = $_GET["role"];
-
-        	/* Check for empty fields */
-        	if(isset($_GET['submit']) && $role == "")
-        		print "Go back and check role field please. <br />";
-
+        	
         	/* Proceed to add to database */
-        	if($role != ""){
+        	if(isset($_GET['submit'])){
         		/* Grab movie ID */
     	    	$query = "SELECT id FROM Movie WHERE title='$m_title' AND year=$m_year";
 	            $rs = mysql_query($query, $db_connection);
