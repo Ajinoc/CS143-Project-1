@@ -50,7 +50,7 @@
 
         	/* Gather info */
         	list($m_title,$m_year) = explode("|",$_GET['movie']);
-        	list($d_first,$d_last,$d_dob) = explode(" ",$_GET['director']);
+        	list($d_first,$d_last,$d_dob) = explode("|",$_GET['director']);
 
         	/* Proceed to add to database */
         	if(isset($_GET['submit'])){
