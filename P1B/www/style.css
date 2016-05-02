@@ -33,3 +33,12 @@ body {
  table {
  	background-color: #9890AF;
  }
+
+ a:link {
+ 	color: #756B97;
+ }
+
+ a:visited {
+ 	color: #756B97;
+ }
+ 
