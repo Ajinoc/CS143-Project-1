@@ -32,6 +32,27 @@
         <b>Rating</b>: $row[3]<br/>
         <b>Company</b>: $row[4]<br/>";
 
+        $query = "SELECT * FROM MovieDirector WHERE MovieDirector.mid='$id'";
+        $rs = mysql_query($query, $db_connection);
+
+        $directors="";
+
+        if ($row = mysql_fetch_row($rs)) {
+            $sub_query = "SELECT * FROM Director WHERE Director.id=$row[1]";
+            $sub_rs = mysql_query($sub_query, $db_connection);
+            $sub_row = mysql_fetch_array($sub_rs);
+            $directors = $sub_row[2].' '.$sub_row[1].'('.$sub_row[3].')';
+        }
+
+        while ($row = mysql_fetch_row($rs)) {
+            $sub_query = "SELECT * FROM Director WHERE Director.id=$row[1]";
+            $sub_rs = mysql_query($sub_query, $db_connection);
+            $sub_row = mysql_fetch_array($sub_rs);
+            $directors = $director.', '.$sub_row[2].' '.$sub_row[1].'('.$sub_row[3].')';
+        }
+
+        print "<b>Director</b>: ".$directors."<br/>";
+
         $query = "SELECT * FROM MovieGenre WHERE MovieGenre.mid='$id'";
         $rs = mysql_query($query, $db_connection);
 
