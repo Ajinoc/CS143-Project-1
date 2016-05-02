@@ -46,6 +46,8 @@
             print '<a href="B2.php?id='.$row[1].'" target="iframe">';                    
             print $title[0].'</a>".<br/>';
         }
+
+        mysql_close($db_connection);
     ?>
     <hr/>
     
