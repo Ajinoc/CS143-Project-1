@@ -39,7 +39,7 @@
         $query = "SELECT role, mid FROM MovieActor WHERE aid=$aid";
         $rs = mysql_query($query, $db_connection);
         while($row = mysql_fetch_row($rs)) {
-            print '<b>Acted as</b> "'.$row[0].'" in the <b>movie</b> "';
+            print 'Acted as "'.$row[0].'" in the movie "';
             $sub_query = "SELECT title FROM Movie WHERE id=$row[1]";
             $rs_s = mysql_query($sub_query, $db_connection);
             $title = mysql_fetch_array($rs_s);

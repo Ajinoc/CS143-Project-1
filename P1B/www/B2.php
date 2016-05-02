@@ -72,7 +72,35 @@
             $sub_query = "SELECT * FROM Actor WHERE Actor.id='$row[1]'";
             $sub_rs = mysql_query($sub_query, $db_connection);
             $sub_row = mysql_fetch_array($sub_rs);
-            print 'Starring <a href="B1.php?id='.$sub_row[0].'" target="iframe">'.$sub_row[2]. ' '.$sub_row[1].'</a> as "'.$row[2].'"<br/>';
+            print 'Starring <a href="B1.php?id='.$sub_row[0].'" target="iframe">'.$sub_row[2]. ' '.$sub_row[1].'</a> as "'.$row[2].'".<br/>';
+        }
+
+        print '<hr/><h3>Movie Reviews</h3>';
+        /* Grab average score */
+        $query = "SELECT AVG(rating), COUNT(*) FROM Review GROUP BY mid HAVING mid=$id";
+        $rs = mysql_query($query, $db_connection);
+        $row = mysql_fetch_array($rs);
+
+        print 'Average Score: ';
+        if($row[1] > 0)
+            print $row[0].'/5 (5.0 is a perfect score) out of '.$row[1].' review(s). ';
+        else
+            print '(Sorry, no reviews are available for this movie!) ';
+
+        print '<a href="I3.php?id='.$id.'" target="iframe">
+        Add your own review now!</a>
+        <br/>All comments can be seen below:<br/><br/>';
+
+        /* Grab all comments for the movie */
+        $query = "SELECT name, time, rating, comment FROM Review WHERE mid=$id";
+        $rs = mysql_query($query, $db_connection);
+        while($row = mysql_fetch_row($rs)) {
+            print 'On <font color="#55487E">'
+                .$row[1].'</font>, <font color="#763936">'
+                .$row[0].'</font> gave this movie a score of 
+                <font color="386E6E">'
+                .$row[2].'/5</font> and left the review: <br/>'
+                .$row[3].'<br/><br/>';
         }
 
         echo '<hr/>';

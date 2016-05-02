@@ -23,8 +23,13 @@
 			
 		<?php
 			/* Form queries to creat options for Movie drop-down */
-			$query_1 = "SELECT title, year FROM Movie ORDER BY title ASC";
+			$id = $_GET["id"];
+			if(!empty($id))
+				$query_1 = "SELECT title, year FROM Movie WHERE id=$id";
+			else
+				$query_1 = "SELECT title, year FROM Movie ORDER BY title ASC";
 			$rs_1 = mysql_query($query_1, $db_connection);
+			
 		?>
 			Movie: <select name="movie">
 				<?php
@@ -69,7 +74,7 @@
         	    $mid = mysql_fetch_array($rs);
 
         	    /* Grab current timestamp */
-        	    $query = "SELECT CURTIME()";
+        	    $query = "SELECT NOW()";
         	    $rs = mysql_query($query, $db_connection);
         	    $curr_t = mysql_fetch_array($rs);
                 
