@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>	
 	<body>
-		<h3>Add a Comment/Review to a Movie: </h3><hr/>
+		<h3>Add a comment/review to a movie: </h3><hr/>
 
 		<?php
 
