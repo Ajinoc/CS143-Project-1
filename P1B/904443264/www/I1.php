@@ -66,7 +66,7 @@
         		}
         
         		if($identity == "Director") {
-            		$query_insert = "INSERT INTO Director(id,first,last,dob,dod) VALUES ('$pid','$fname','$lname','$dob',$dod)";
+            		$query_insert = "INSERT INTO Director(id,first,last,dob,dod) VALUES ('$pid[0]','$fname','$lname','$dob',$dod)";
         		}
         		$query_update = "UPDATE MaxPersonID SET id = $pid[0]";
 

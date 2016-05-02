@@ -25,7 +25,7 @@
 			/* Form queries to creat options for Movie and Director drop-down */
 			$query_1 = "SELECT title, year FROM Movie ORDER BY title ASC";
 			$rs_1 = mysql_query($query_1, $db_connection);
-			$query_2 = "SELECT CONCAT(first, ' ', last) as name, dob FROM Director ORDER BY name ASC";
+			$query_2 = "SELECT CONCAT(first, ' ', last) as name, first, last, dob FROM Director ORDER BY name ASC";
 			$rs_2 = mysql_query($query_2, $db_connection);
 		?>
 			Movie: <select name="movie">
@@ -38,7 +38,7 @@
 			Director: <select name="director">
 				<?php
 					while ($row = mysql_fetch_array($rs_2)) {
-   						echo '<option value="'.$row[0].' '.$row[1].'">'.$row[0].' ('.$row[1].')</option>';
+   						echo '<option value="'.$row[1].'|'.$row[2].'|'.$row[3].'">'.$row[0].' ('.$row[3].')</option>';
 					}
 				?>
 					</select><br/><hr/>
