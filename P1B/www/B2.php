@@ -89,7 +89,7 @@
 
         print '<a href="I3.php?id='.$id.'" target="iframe">
         Add your own review now!</a>
-        <br/>All comments can be seen below:<br/><br/>';
+        <br/>All comments can be seen below (if any):<br/><br/>';
 
         /* Grab all comments for the movie */
         $query = "SELECT name, time, rating, comment FROM Review WHERE mid=$id";

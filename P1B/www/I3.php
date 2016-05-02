@@ -51,7 +51,7 @@
 			Comment: <br>
 			<textarea class ="FormElement" name ="comment" id="query" style="width: 525px; height: 225px;"></textarea><hr/>
 
-			<input type="submit" name="submit" value="Add to the database!"/>
+			<input type="submit" name="submit" value="Add your review!"/>
 		</form>	
 
 		<?php
@@ -88,7 +88,8 @@
                     print "Insert failed: $errmsg <br />";
                 }
     			if($ins_q){
-                	print "Successfully added. <br />";
+                	print "Successfully added! We appreciate your movie crique!<br />";
+                	print '<a href="B2.php?id='.$mid[0].'" target="iframe">Return to see the other reviews for this movie?</a>';
             	}
         	} 
 			mysql_close($db_connection);
