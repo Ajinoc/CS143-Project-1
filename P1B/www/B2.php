@@ -34,9 +34,18 @@
 
         $query = "SELECT * FROM MovieGenre WHERE MovieGenre.mid='$id'";
         $rs = mysql_query($query, $db_connection);
-        $row = mysql_fetch_array($rs);
 
-        print "<b>Genre</b>: $row[1]<br/>";
+        $genre="";
+
+        if ($row = mysql_fetch_row($rs)) {
+            $genre = $row[1];
+        }
+
+        while ($row = mysql_fetch_row($rs)) {
+            $genre = $genre.', '.$row[1];
+        }
+
+        print "<b>Genre</b>: ".$genre."<br/>";
 
         $query = "SELECT * FROM Sales WHERE Sales.mid='$id'";
         $rs = mysql_query($query, $db_connection);
@@ -67,6 +76,8 @@
         }
 
         echo '<hr/>';
+
+
 
         mysql_close($db_connection);
     ?>
