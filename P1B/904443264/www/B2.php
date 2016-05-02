@@ -48,7 +48,7 @@
             $sub_query = "SELECT * FROM Director WHERE Director.id=$row[1]";
             $sub_rs = mysql_query($sub_query, $db_connection);
             $sub_row = mysql_fetch_array($sub_rs);
-            $directors = $director.', '.$sub_row[2].' '.$sub_row[1].'('.$sub_row[3].')';
+            $directors = $directors.', '.$sub_row[2].' '.$sub_row[1].'('.$sub_row[3].')';
         }
 
         print "<b>Director</b>: ".$directors."<br/>";

@@ -32,7 +32,8 @@
             $values = explode(" ", $query);
             $numVals = count($values);
 
-            // Perform actor search only for firstName, lastName
+            // Actor query
+            // TODO: Allow arbitrary number of words in query string for actor as well as movie
             if ($numVals <= 2) {
                 if ($numVals == 1) {
                     // Single Name Query
